@@ -6,6 +6,7 @@
 import sys, os, select, time
 
 SERIAL_PORT = "/dev/ttyUSB1"
+FORMAT = "[{0:.8f}]"
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -19,7 +20,8 @@ if __name__ == "__main__":
             c = read[0].read(1)
 
             if first_line_character:
-                sys.stdout.write("\n[{0:.8f}]".format(time.time() - start_time))
+                sys.stdout.write(FORMAT.format(time.time() - start_time))
+               FORMAT = "\n[{0:.8f}]"
                 sys.stdout.flush()
                 first_line_character = False
             if c == '\n':
