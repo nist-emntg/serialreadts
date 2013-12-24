@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
             if first_line_character:
                 sys.stdout.write(FORMAT.format(time.time() - start_time))
-               FORMAT = "\n[{0:.8f}]"
+                FORMAT = "\n[{0:.8f}]"
                 sys.stdout.flush()
                 first_line_character = False
             if c == '\n':
